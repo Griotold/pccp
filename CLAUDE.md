@@ -37,3 +37,4 @@
 ## 진행 규칙
 - 문제 파일명: `Day{주차}_{YYMMDD}_{번호}.java` 형식 (예: `Day1_260401_1.java`)
 - 패키지: `week1`, `week2`, ... 형식
+- import는 `import java.util.*;` 와일드카드 사용
