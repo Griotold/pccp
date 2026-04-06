@@ -20,8 +20,12 @@ import java.util.*;
 public class Day1_260406_3 {
 
     public static int solution(int n) {
-        // 여기에 풀이를 작성하세요
-        return 0;
+        int result = 0;
+        while(n != 0) {
+            result = result * 10 + n % 10;
+            n /= 10;
+        }
+        return result;
     }
 
     public static void main(String[] args) {

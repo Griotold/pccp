@@ -16,7 +16,7 @@ import java.util.*;
  * - 판별 시 2부터 Math.sqrt(n)까지만 검사하면 효율적
  * - ArrayList에 모아서 마지막에 배열로 변환: list.stream().mapToInt(i->i).toArray()
  */
-public class Day4_260410_1 {
+public class Day1_260406_4 {
 
     public static int[] solution(int n) {
         // 여기에 풀이를 작성하세요
