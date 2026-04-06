@@ -17,7 +17,7 @@ import java.util.*;
  * - Math.abs()로 절대값 처리 후 부호를 나중에 복원
  * - 문자열 변환 없이 수학 연산만으로 풀어보세요
  */
-public class Day3_260409_1 {
+public class Day1_260406_3 {
 
     public static int solution(int n) {
         // 여기에 풀이를 작성하세요
