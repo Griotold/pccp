@@ -24,7 +24,7 @@ import java.util.*;
  * - 문자열을 한 글자씩 순회하며 각 조건의 충족 여부를 체크
  * - boolean 플래그 또는 int 카운터로 조건 수를 세는 방식
  */
-public class Day1_260407_1 {
+public class Day1_260406_1 {
 
     public static String solution(String password) {
         int count = 0;

@@ -19,7 +19,7 @@ import java.util.*;
  * - 공배수 조건을 먼저 검사해야 함 (순서 중요!)
  * - String.valueOf() 또는 Integer.toString()으로 숫자→문자열 변환
  */
-public class Day2_260408_1 {
+public class Day1_260406_2 {
 
     public static String[] solution(int n) {
         // 여기에 풀이를 작성하세요
