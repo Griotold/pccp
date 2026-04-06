@@ -22,8 +22,14 @@ import java.util.*;
 public class Day1_260406_2 {
 
     public static String[] solution(int n) {
-        // 여기에 풀이를 작성하세요
-        return new String[]{};
+        String[] result = new String[n];
+        for(int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) result[i-1] = "FizzBuzz";
+            else if (i % 3 == 0) result[i-1] = "Fizz";
+            else if (i % 5 == 0) result[i-1] = "Buzz";
+            else result[i-1] = String.valueOf(i);
+        }
+        return result;
     }
 
     public static void main(String[] args) {
