@@ -18,9 +18,20 @@ import java.util.*;
  */
 public class Day2_260407_1 {
 
+    static boolean isPrime(int num) {
+        if(num <= 1) return false;
+        for(int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
     public static int[] solution(int n) {
-        // 여기에 풀이를 작성하세요
-        return new int[]{};
+        List<Integer> result = new ArrayList<>();
+        for(int i = 2; i <= n; i++) {
+            if(isPrime(i)) result.add(i);
+        }
+        return result.stream().mapToInt(i->i).toArray();
     }
 
     public static void main(String[] args) {
