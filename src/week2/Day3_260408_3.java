@@ -22,7 +22,7 @@ import java.util.*;
  * - switch문 또는 if-else로 연산자 분기
  * - 각 연산을 별도 함수로 분리하면 가독성이 좋아짐 (선택)
  */
-public class Day7_260413_1 {
+public class Day3_260408_3 {
 
     public static int solution(String expression) {
         // 여기에 풀이를 작성하세요

@@ -18,11 +18,36 @@ import java.util.*;
  * - 자릿수 합: n % 10으로 마지막 자리 추출, n / 10으로 제거
  * - 한 자릿수 = 0~9 범위
  */
-public class Day6_260412_1 {
+public class Day3_260408_2 {
+
+    static int recur(int num) {
+        if(num / 10 == 0) return num;
+        int sum = 0;
+        while(num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return recur(sum);
+    }
 
     public static int solution(int n) {
-        // 여기에 풀이를 작성하세요
-        return 0;
+        return recur(n);
+    }
+
+    /**
+     * while 반복문 방식
+     * - 재귀 없이 바깥 while로 한 자릿수가 될 때까지 반복
+     */
+    public static int solution2(int n) {
+        while(n / 10 != 0) {
+            int sum = 0;
+            while(n != 0) {
+                sum += n % 10;
+                n /= 10;
+            }
+                n = sum;
+        }
+        return n;
     }
 
     public static void main(String[] args) {
