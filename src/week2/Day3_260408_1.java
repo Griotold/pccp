@@ -22,11 +22,17 @@ import java.util.*;
  * - ArrayList에 각 단계의 값을 저장
  * - 짝수/홀수 판별: n % 2 == 0
  */
-public class Day5_260411_1 {
+public class Day3_260408_1 {
 
     public static int[] solution(int n) {
-        // 여기에 풀이를 작성하세요
-        return new int[]{};
+        List<Integer> list = new ArrayList<>();
+        list.add(n);
+        while(n != 1) {
+            if( n % 2 ==0 ) n /= 2;
+            else n = n * 3 + 1;
+            list.add(n);
+        }
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
     public static void main(String[] args) {

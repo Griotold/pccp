@@ -34,6 +34,30 @@ public class Day2_260407_1 {
         return result.stream().mapToInt(i->i).toArray();
     }
 
+    /**
+     * 에라토스테네스의 체 방식
+     * - boolean 배열로 소수 여부를 한꺼번에 판별
+     * - 소수의 배수를 일괄 제거 → 시간복잡도 O(n log log n)
+     * - j = i * i부터 시작: 그 이전 배수는 이미 이전 단계에서 제거됨
+     */
+    public static int[] solution2(int n) {
+        boolean[] isNotPrime = new boolean[n + 1];
+
+        for (int i = 2; i * i <= n; i++) {
+            if (!isNotPrime[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    isNotPrime[j] = true;
+                }
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+            if (!isNotPrime[i]) result.add(i);
+        }
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
     public static void main(String[] args) {
         // 테스트 1: n=10
         int[] result1 = solution(10);
