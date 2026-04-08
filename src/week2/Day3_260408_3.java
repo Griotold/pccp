@@ -24,9 +24,31 @@ import java.util.*;
  */
 public class Day3_260408_3 {
 
+    static int plus(int a, int b) {
+        return a + b;
+    }
+    static int minus(int a, int b) {
+        return a - b;
+    }
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+    static int divide(int a, int b) {
+        if(b == 0) return Integer.MIN_VALUE;
+        return a / b;
+    }
+
     public static int solution(String expression) {
-        // 여기에 풀이를 작성하세요
-        return 0;
+        int result = 0;
+        String[] split = expression.split(" ");
+        int a = Integer.parseInt(split[0]);
+        String operator = split[1];
+        int b = Integer.parseInt(split[2]);
+        if(operator.equals("+")) result = plus(a, b);
+        else if(operator.equals("-")) result = minus(a, b);
+        else if(operator.equals("*")) result = multiply(a, b);
+        else result = divide(a, b);
+        return result;
     }
 
     public static void main(String[] args) {
