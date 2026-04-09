@@ -69,9 +69,40 @@ import java.util.*;
  */
 public class Day4_260409_3_past {
 
+    static int toSec(String mmss) {
+        String[] p = mmss.split(":");
+        return Integer.parseInt(p[0]) * 60 + Integer.parseInt(p[1]);
+    }
+
+    static String toMmss(int sec) {
+        return String.format("%02d:%02d", sec / 60, sec % 60);
+    }
+
+    static int applyOpeningSkip(int cur, int opStart, int opEnd) {
+        if(opStart <= cur && cur <= opEnd) {
+            return opEnd;
+        }
+        return cur;
+    }
+    // 입력: video_len="10:55", pos="00:05", op_start="00:15", op_end="06:55",
+    // *       commands=["prev","next","next"]
     public static String solution(String video_len, String pos, String op_start, String op_end, String[] commands) {
-        // 여기에 풀이를 작성하세요
-        return "";
+        int cur         = toSec(pos);
+        int opStartSec  = toSec(op_start);
+        int opEndSec    = toSec(op_end);
+        int videoLenSec = toSec(video_len);
+
+        cur = applyOpeningSkip(cur, opStartSec, opEndSec);
+
+        for (String com : commands) {
+            if (com.equals("prev")) {
+                cur = Math.max(0, cur - 10);
+            } else {
+                cur = Math.min(videoLenSec, cur + 10);
+            }
+            cur = applyOpeningSkip(cur, opStartSec, opEndSec);
+        }
+        return toMmss(cur);
     }
 
     public static void main(String[] args) {
